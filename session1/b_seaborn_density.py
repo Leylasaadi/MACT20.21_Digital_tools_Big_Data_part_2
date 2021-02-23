@@ -26,7 +26,7 @@ import seaborn as sns
 gdp_growth = pd.read_csv('../data/WB_GDP_growth_anual.csv', skiprows=4)
 
 # Using the following list, we will create a subset to explore summary statistics
-countries = ('Spain', 'France', 'Colombia', 'United Kingdom')
+countries = ('Russian Federation', 'United Arab Emirates', 'Syrian Arab Republic')
 
 # First, we will create an histogram for the values in 2019
 
@@ -44,6 +44,7 @@ sns.displot(gdp_growth['2009'], hist=True, kde=False, bins=20, color='blue',
 plt.title('Histogram of GDP growth in 2019')
 plt.xlabel('Growth (%)')
 plt.ylabel('Frequency')
+plt.show()
 
 
 
@@ -55,7 +56,7 @@ country_values = gdp_growth[gdp_growth['Country Name'] == country['name'][0]]
 gdp_growth_values = country_values.iloc[0, 4:]
 
 # matplotlib histogram
-plt.hist(gdp_growth_values, color='blue', edgecolor='black', bins=20)
+plt.hist(gdp_growth_values, color='red', edgecolor='black', bins=20)
 
 # seaborn histogram
 sns.distplot(gdp_growth_values, hist=True, kde=False, bins=20, color='blue',
@@ -64,16 +65,17 @@ sns.distplot(gdp_growth_values, hist=True, kde=False, bins=20, color='blue',
 plt.title('GDP growth in %s' % name)
 plt.xlabel('Growth (%)')
 plt.ylabel('frequency')
-
+plt.show()
 
 
 # Third, For density plots refer to the following documentation
 # https://towardsdatascience.com/histograms-and-density-plots-in-python-f6bda88f5ac0#:~:text=Density%20Plots%20in%20Seaborn&text=The%20curve%20shows%20the%20density,scale%20as%20the%20density%20plot.
 # Density Plot and Histogram of all arrival delays
-sns.distplot(gdp_growth_values, hist=True, kde=True,
+sns.displot(gdp_growth_values, hist=True, kde=True,
              bins=40, color = 'darkblue',
              hist_kws={'edgecolor':'black'},
              kde_kws={'linewidth': 4})
 
 
 print('Compare multiple countries and analyse')
+plt.show()
