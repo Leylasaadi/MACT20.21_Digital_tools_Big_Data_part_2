@@ -46,5 +46,5 @@ def animate(i):
     plt.title('Live graph with matplotlib')
 
 
-ani = animation.FuncAnimation(fig, animate, interval=1000)
+ani = animation.FuncAnimation(fig, animate, interval=2000)
 plt.show()

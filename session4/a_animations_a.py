@@ -46,7 +46,7 @@ def animate(i):
 
 
 # Lastly,the animation function uses the previous parameters to produce multiple plots
-anim = FuncAnimation(fig, animate, init_func=init, frames=200, interval=20, blit=True)
+anim = FuncAnimation(fig, animate, init_func=init, frames=200, interval=10, blit=True)
 
 #
 anim.save('sine_wave.gif', writer='imagemagick')

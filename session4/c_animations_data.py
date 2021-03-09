@@ -40,6 +40,7 @@ data['day_after_zero'] = data['date_indicator'] - initial_day
 data['day_after_zero'] = data['day_after_zero']/np.timedelta64(1, 'D')
 # we also extract some values to set the plot limits
 max_day = data['day_after_zero'].max().astype(int)
+#max_day = int(data['day_after_zero'].max())
 max_cases = data['value'].max()
 title = 'Covid-19 cases BCN'
 
